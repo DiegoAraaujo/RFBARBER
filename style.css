@@ -72,6 +72,10 @@ main{
 .opcoes:hover{
     transform: scale(1.02);
 }
+.opcoes a{
+    color: white;
+    text-decoration: none;
+}
 #opcoes-menu.active {
     left: 0; /* Quando o hambúrguer for clicado, o menu aparece */
 }
