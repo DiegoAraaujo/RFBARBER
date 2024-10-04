@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 97vh;
+}
+
+main{
+    position: relative;
+    border-radius: 20px;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #100f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    gap: 10px;
+    color: white;
+}
+img{
+    display: block;
+    margin: 0 auto 0 auto;
+}
+#codarea{
+    justify-content: space-between;
+    display: flex;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.digito-codigo{
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+    background-color: white;
+}
+#confirmar{
+    width: 300px;
+}
+h3{
+    color: white;
+}
+#cadastrarerecuperar{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    font-size: 11px;
+}
+#cadastrarerecuperar a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+#voltar a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    top: 0;
+    left: 20px;
+    position: absolute;
+    font-size: 25px;
+    transition: transform ease 0.2s;
+}
+
+#voltar a:hover{
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+}
+
+h5{
+    margin: 0;
+}
+
+#reedefinicao{
+    gap: 10px;
+    display: none;
+    flex-direction: column;
+}
