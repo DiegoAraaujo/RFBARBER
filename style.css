@@ -10,9 +10,8 @@ body{
 }
 
 header {
+    background-color: black;
     display: flex;
-    max-width:1300px;
-    width: 100%;
     margin: 0 auto 0 auto;
     position: relative;
 }
@@ -32,7 +31,7 @@ nav {
 }
 
 #bem-vindo{
-    margin: 0 auto 20px auto;
+    margin: 20px auto 20px auto;
     max-width: 800px;
     width: 100%;
     padding: 0 15px 15px 15px;
@@ -80,13 +79,15 @@ main{
     height: 300px;
 }
 .opcao{
+    padding: 15px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: rgb(100, 100, 100);
-    width: 300px;
+    background-color: #646464;
+    width: 100%;
+    max-width: 350px;
     height: 70px;
     transition: transform ease 0.3s;
 }
@@ -149,6 +150,7 @@ main{
 }
 
 .nos-conheca{
+    background-color: #646464;
     text-indent: 20px;
     max-width: 400px;
     width: 100%;
@@ -157,7 +159,7 @@ main{
     padding: 10px;
     align-items: center;
     text-align: justify;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 .foto-mural{
     border: 1px solid rgb(0, 0, 0);
@@ -166,4 +168,5 @@ main{
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
