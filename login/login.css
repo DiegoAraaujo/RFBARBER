@@ -1,15 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 97vh;
 }
-main{
+
+main {
     border-radius: 20px;
     text-align: left;
     padding: 20px;
@@ -22,49 +24,48 @@ main{
     width: 100%;
     gap: 10px;
     color: white;
+    height: 260px;
 }
-img{
+
+img {
     display: block;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
 }
-#senha{
+
+#senha,
+#email {
     color: white;
     width: 200px;
     background-color: transparent;
     border: 1px solid white;
     border-top: 0;
     border-right: 0;
-    border-left:0;
+    border-left: 0;
 }
-#email{
-    color: white;
-    width: 200px;
-    background-color: transparent;
-    border: 1px solid white;
-    border-top: 0;
-    border-right: 0;
-    border-left:0;       
-}
-#confirmar{
+
+#confirmar {
     width: 200px;
 }
-h3{
+
+h3 {
     color: white;
 }
-#cadastrarerecuperar{
+
+#cadastrarerecuperar {
     display: flex;
     justify-content: space-around;
     width: 200px;
     font-size: 11px;
 }
-#cadastrarerecuperar a{
+
+#cadastrarerecuperar a {
     color: white;
     text-decoration: none;
     cursor: pointer;
     margin: 0;
 }
-label{
+
+label {
     font-size: 13px;
     width: 200px;
 }
-
