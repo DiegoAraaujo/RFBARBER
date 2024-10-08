@@ -26,55 +26,70 @@
         <a href="">CONFIGURAÇÕES</a>
     </div>
     <main>
-    <h3>Selecione um dia para agendar seu horário:</h3>
-    <input type="date" id="data-agendamento" name="data-agendamento">
+        <h3>Selecione um dia para agendar seu horário:</h3>
+        <input type="date" id="data-agendamento" name="data-agendamento">
 
-    <section id="marcar-hora">
-        <!-- Segunda-feira -->
-        <div class="dia" data-dia="1">
-            <div class="hora">13:00</div>
-            <div class="hora">14:00</div>
-            <div class="hora">15:00</div>
-            <div class="hora">16:00</div>
-            <div class="hora">17:00</div>
-        </div>
-        
-        <!-- Terça-feira -->
-        <div class="dia" data-dia="2">
-            <div class="hora">14:00</div>
-            <div class="hora">15:00</div>
-            <div class="hora">16:00</div>
-            <div class="hora">17:00</div>
-            <div class="hora">18:00</div>
-        </div>
+        <section id="marcar-hora">
+            <!-- Segunda-feira -->
+            <div class="dia" data-dia="1">
+                <div class="hora">13:00</div>
+                <div class="hora">14:00</div>
+                <div class="hora">15:00</div>
+                <div class="hora">16:00</div>
+                <div class="hora">17:00</div>
+            </div>
+            
+            <!-- Terça-feira -->
+            <div class="dia" data-dia="2">
+                <div class="hora">14:00</div>
+                <div class="hora">15:00</div>
+                <div class="hora">16:00</div>
+                <div class="hora">17:00</div>
+                <div class="hora">18:00</div>
+            </div>
 
-        <!-- Quarta-feira -->
-        <div class="dia" data-dia="3">
-            <div class="hora">13:00</div>
-            <div class="hora">14:00</div>
-            <div class="hora">15:00</div>
-            <div class="hora">16:00</div>
-        </div>
+            <!-- Quarta-feira -->
+            <div class="dia" data-dia="3">
+                <div class="hora">13:00</div>
+                <div class="hora">14:00</div>
+                <div class="hora">15:00</div>
+                <div class="hora">16:00</div>
+            </div>
 
-        <!-- Quinta-feira -->
-        <div class="dia" data-dia="4">
-            <div class="hora">15:00</div>
-            <div class="hora">16:00</div>
-            <div class="hora">17:00</div>
-            <div class="hora">18:00</div>
-        </div>
+            <!-- Quinta-feira -->
+            <div class="dia" data-dia="4">
+                <div class="hora">15:00</div>
+                <div class="hora">16:00</div>
+                <div class="hora">17:00</div>
+                <div class="hora">18:00</div>
+            </div>
 
-        <!-- Sexta-feira -->
-        <div class="dia" data-dia="5">
-            <div class="hora">13:00</div>
-            <div class="hora">14:00</div>
-            <div class="hora">15:00</div>
-            <div class="hora">16:00</div>
+            <!-- Sexta-feira -->
+            <div class="dia" data-dia="5">
+                <div class="hora">13:00</div>
+                <div class="hora">14:00</div>
+                <div class="hora">15:00</div>
+                <div class="hora">16:00</div>
+            </div>
+        </section>
+
+        <button id="botao-agendar">Agendar</button>
+    </main>
+    <section id="regras">
+        <div id="regra1">
+            <div style="text-align: center;">💡</div>
+            Caso não possa comparecer ao seu agendamento no dia e horário marcados, por favor, cancele-o antecipadamente.
+        </div>
+        <div id="regra2">
+            <div style="text-align: center;">💡</div>
+            Caso não haja horários disponíveis, <a href="https://wa.me/5588996553613
+            " target="_blank">entre em contato conosco</a> e faremos o possível para encontrar uma solução para você.
+        </div>
+        <div id="regra3">
+            <div style="text-align: center;">💡</div>
+            Após agendar seu horário, você poderá acompanhá-lo em seu perfil, além de ter acesso ao histórico completo de seus agendamentos.
         </div>
     </section>
-
-    <button id="botao-agendar">Agendar</button>
-    </main>
     <script src="../script.js"></script>
     <script>
     const inputData = document.getElementById('data-agendamento');
