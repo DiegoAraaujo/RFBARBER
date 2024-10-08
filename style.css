@@ -87,8 +87,7 @@ main{
     height: 300px;
 }
 .opcao{
-    border-radius: 25px;
-    padding: 10px;
+    border-radius: 25px;   
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -96,7 +95,7 @@ main{
     color: rgb(0, 0, 0);
     background-color: white;
     width: 350px;
-    height: 70px;
+    height: 65px;
     transition: transform ease 0.3s;
 }
 .opcao:hover {
