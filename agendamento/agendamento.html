@@ -1,165 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RF BARBER - Agendamento</title>
     <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="agendamento.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="menu-hamburger" id="menu-btn">
+            <div class="menu-hamburger" id="menu-btn" onclick="toggleMenu()">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
         </nav>
-        <img src="../image/logorf.png" alt="" id="logorf">
+        <img src="../image/logorf.png" alt="Logo RF Barber" id="logorf">
     </header>
     <div id="opcoes-menu">
-        <a href="../index.html">PAGINA PRINCIPAL</a>
+        <a href="../index.html">PÁGINA PRINCIPAL</a>
         <a href="">MEU PERFIL</a>
         <a href="">GALERIA</a>
         <a href="">CONTATO</a>
         <a href="">CONFIGURAÇÕES</a>
     </div>
+
     <main>
         <h3>Selecione um dia para agendar seu horário:</h3>
-        <input type="date" id="data-agendamento" name="data-agendamento">
+        <input type="text" id="data-agendamento" placeholder="Selecione uma data">
+        
+        <script>
+            flatpickr("#data-agendamento", {
+                locale: "pt",
+                dateFormat: "d/m/Y", 
+                allowInput: true
+            });
+        </script>
 
         <section id="marcar-hora">
-            <!-- Segunda-feira -->
-            <div class="dia" data-dia="1">
-                <div class="hora">13:00</div>
-                <div class="hora">14:00</div>
-                <div class="hora">15:00</div>
-                <div class="hora">16:00</div>
-                <div class="hora">17:00</div>
+            <div class="dia">
+                <h3>Segunda-feira</h3>
+                <div class="descricao">Turno da Manhã: FECHADO</div>
+                <div class="descricao">Turno da Tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">17:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">18:00</div>
+                </div>
             </div>
-            
-            <!-- Terça-feira -->
-            <div class="dia" data-dia="2">
-                <div class="hora">14:00</div>
-                <div class="hora">15:00</div>
-                <div class="hora">16:00</div>
-                <div class="hora">17:00</div>
-                <div class="hora">18:00</div>
+            <div class="dia">
+                <h3>Terça-feira</h3>
+                <div class="descricao">Fechado pela manhã</div>
+                <div class="descricao">Horários da tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">17:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">18:00</div>
+                </div>
+            </div>
+            <div class="dia">
+                <div style="text-align: center;">
+                    <h3>Escolha seu horario</h3>
+                </div>
+                <div class="descricao">Fechado pela manhã</div>
+                <div class="descricao">Horários da tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">17:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">18:00</div>
+                </div>
             </div>
 
-            <!-- Quarta-feira -->
-            <div class="dia" data-dia="3">
-                <div class="hora">13:00</div>
-                <div class="hora">14:00</div>
-                <div class="hora">15:00</div>
-                <div class="hora">16:00</div>
+            <div class="dia">
+                <div style="text-align: center;">
+                    <h3>Escolha seu horario</h3>
+                </div>
+                <div class="descricao">Fechado pela manhã</div>
+                <div class="descricao">Horários da tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">17:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">18:00</div>
+                </div>
             </div>
 
-            <!-- Quinta-feira -->
-            <div class="dia" data-dia="4">
-                <div class="hora">15:00</div>
-                <div class="hora">16:00</div>
-                <div class="hora">17:00</div>
-                <div class="hora">18:00</div>
+            <div class="dia">
+                <div style="text-align: center;">
+                    <h3>Escolha seu horario</h3>
+                </div>
+                <div class="descricao">Fechado pela manhã</div>
+                <div class="descricao">Horários da tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">17:00</div>
+                </div>
             </div>
 
-            <!-- Sexta-feira -->
-            <div class="dia" data-dia="5">
-                <div class="hora">13:00</div>
-                <div class="hora">14:00</div>
-                <div class="hora">15:00</div>
-                <div class="hora">16:00</div>
+            <div class="dia">
+                <div style="text-align: center;">
+                    <h3>Escolha seu horario</h3>
+                </div>
+                <div class="descricao">Manhã: por ordem de chegada</div>
+                <div class="descricao">Horários da tarde:</div>
+                <div class="horarios">
+                    <div class="hora" onclick="selecionarHora(this)">13:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">14:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">15:00</div>
+                    <div class="hora" onclick="selecionarHora(this)">16:00</div>
+                </div>
+            </div>
+
+            <div class="dia">
+                <div style="text-align: center;">
+                    <h3>Escolha seu horario</h3>
+                </div>
+                <div class="descricao">Manhã: por ordem de chegada</div>
+                <div class="descricao">Tarde: fechado</div>
             </div>
         </section>
-
-        <button id="botao-agendar">Agendar</button>
+        <button id="botao-agendar">CONFIRMAR</button>
     </main>
+
     <section id="regras">
         <div id="regra1">
             <div style="text-align: center;">💡</div>
-            Caso não possa comparecer ao seu agendamento no dia e horário marcados, por favor, cancele-o antecipadamente.
+            Caso não possa comparecer ao seu agendamento, cancele-o antecipadamente.
         </div>
         <div id="regra2">
             <div style="text-align: center;">💡</div>
-            Caso não haja horários disponíveis, <a href="https://wa.me/5588996553613
-            " target="_blank">entre em contato conosco</a> e faremos o possível para encontrar uma solução para você.
+            Caso não haja horários disponíveis, <a href="https://wa.me/5588996553613" target="_blank">entre em contato conosco</a>.
         </div>
         <div id="regra3">
             <div style="text-align: center;">💡</div>
-            Após agendar seu horário, você poderá acompanhá-lo em seu perfil, além de ter acesso ao histórico completo de seus agendamentos.
+            Após agendar, você poderá acompanhar em seu perfil.
         </div>
     </section>
+
     <script src="../script.js"></script>
-    <script>
-    const inputData = document.getElementById('data-agendamento');
-    const dias = document.querySelectorAll('.dia');
-    const botaoAgendar = document.getElementById('botao-agendar');
-    let horaSelecionada = null;
-
-    // Função para formatar a data como YYYY-MM-DD
-    function formatDate(date) {
-        return date.toISOString().split('T')[0];
-    }
-
-    // Obtém a data atual
-    const hoje = new Date();
-
-    // Define o primeiro dia do mês atual
-    const primeiroDiaMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
-
-    // Define o último dia do mês atual
-    const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0);
-
-    // Define o valor mínimo e máximo do input de data
-    inputData.min = formatDate(primeiroDiaMes);
-    inputData.max = formatDate(ultimoDiaMes);
-
-    inputData.addEventListener('change', function() {
-        const dataSelecionada = new Date(this.value);
-        const diaSemana = dataSelecionada.getDay(); // Retorna o dia da semana (0 = Domingo, 1 = Segunda...)
-
-        // Esconde todas as divs de dias
-        dias.forEach(dia => dia.style.display = 'none');
-
-        // Exibe os horários do dia da semana selecionado
-        const diaSelecionado = document.querySelector(`.dia[data-dia="${diaSemana}"]`);
-        
-        if (diaSelecionado) {
-            diaSelecionado.style.display = 'flex';
-        } else {
-            alert('Desculpe, não atendemos neste dia.');
-        }
-        
-        // Limpa a seleção de horário anterior
-        horaSelecionada = null;
-        botaoAgendar.style.display = 'none'; // Esconde o botão ao mudar o dia
-    });
-
-    // Adiciona o evento de clique para cada horário
-    document.querySelectorAll('.hora').forEach(hora => {
-        hora.addEventListener('click', function() {
-            // Remove a classe 'selecionada' de todos os horários
-            document.querySelectorAll('.hora').forEach(h => h.classList.remove('selecionada'));
-
-            // Adiciona a classe 'selecionada' ao horário clicado
-            this.classList.add('selecionada');
-
-            // Armazena o horário selecionado
-            horaSelecionada = this.textContent;
-
-            // Exibe o botão "Agendar"
-            botaoAgendar.style.display = 'block';
-        });
-    });
-
-    // Função para o clique no botão "Agendar"
-    botaoAgendar.addEventListener('click', function() {
-        if (horaSelecionada) {
-            alert(`Horário agendado para: ${horaSelecionada}`);
-        }
-    });
-    </script>
-
+    <script src="agendar.js"></script>
 </body>
 </html>
