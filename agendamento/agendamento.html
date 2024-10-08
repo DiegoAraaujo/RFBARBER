@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RF BARBER</title>
+    <title>RF BARBER - Agendamento</title>
     <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="agendamento.css">
 </head>
@@ -16,19 +16,136 @@
                 <div class="bar"></div>
             </div>
         </nav>
-        <img src="image/LOGO RF.png" alt="" id="logorf">
+        <img src="../image/logorf.png" alt="" id="logorf">
     </header>
     <div id="opcoes-menu">
         <a href="">PAGINA PRINCIPAL</a>
         <a href="">MEU PERFIL</a>
+        <a href="agendamento.html">AGENDAR HORARIO</a>
         <a href="">GALERIA</a>
         <a href="">CONTATO</a>
         <a href="">CONFIGURAÇÕES</a>
     </div>
-    <section>
+    <main>
+    <h3>Selecione um dia para agendar seu horário:</h3>
+    <input type="date" id="data-agendamento" name="data-agendamento">
 
+    <section id="marcar-hora">
+        <!-- Segunda-feira -->
+        <div class="dia" data-dia="1">
+            <div class="hora">13:00</div>
+            <div class="hora">14:00</div>
+            <div class="hora">15:00</div>
+            <div class="hora">16:00</div>
+            <div class="hora">17:00</div>
+        </div>
+        
+        <!-- Terça-feira -->
+        <div class="dia" data-dia="2">
+            <div class="hora">14:00</div>
+            <div class="hora">15:00</div>
+            <div class="hora">16:00</div>
+            <div class="hora">17:00</div>
+            <div class="hora">18:00</div>
+        </div>
+
+        <!-- Quarta-feira -->
+        <div class="dia" data-dia="3">
+            <div class="hora">13:00</div>
+            <div class="hora">14:00</div>
+            <div class="hora">15:00</div>
+            <div class="hora">16:00</div>
+        </div>
+
+        <!-- Quinta-feira -->
+        <div class="dia" data-dia="4">
+            <div class="hora">15:00</div>
+            <div class="hora">16:00</div>
+            <div class="hora">17:00</div>
+            <div class="hora">18:00</div>
+        </div>
+
+        <!-- Sexta-feira -->
+        <div class="dia" data-dia="5">
+            <div class="hora">13:00</div>
+            <div class="hora">14:00</div>
+            <div class="hora">15:00</div>
+            <div class="hora">16:00</div>
+        </div>
     </section>
 
-    <script src="script.js"></script>
+    <button id="botao-agendar">Agendar</button>
+    </main>
+    <script src="../script.js"></script>
+    <script>
+    const inputData = document.getElementById('data-agendamento');
+    const dias = document.querySelectorAll('.dia');
+    const botaoAgendar = document.getElementById('botao-agendar');
+    let horaSelecionada = null;
+
+    // Função para formatar a data como YYYY-MM-DD
+    function formatDate(date) {
+        return date.toISOString().split('T')[0];
+    }
+
+    // Obtém a data atual
+    const hoje = new Date();
+
+    // Define o primeiro dia do mês atual
+    const primeiroDiaMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
+
+    // Define o último dia do mês atual
+    const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0);
+
+    // Define o valor mínimo e máximo do input de data
+    inputData.min = formatDate(primeiroDiaMes);
+    inputData.max = formatDate(ultimoDiaMes);
+
+    inputData.addEventListener('change', function() {
+        const dataSelecionada = new Date(this.value);
+        const diaSemana = dataSelecionada.getDay(); // Retorna o dia da semana (0 = Domingo, 1 = Segunda...)
+
+        // Esconde todas as divs de dias
+        dias.forEach(dia => dia.style.display = 'none');
+
+        // Exibe os horários do dia da semana selecionado
+        const diaSelecionado = document.querySelector(`.dia[data-dia="${diaSemana}"]`);
+        
+        if (diaSelecionado) {
+            diaSelecionado.style.display = 'flex';
+        } else {
+            alert('Desculpe, não atendemos neste dia.');
+        }
+        
+        // Limpa a seleção de horário anterior
+        horaSelecionada = null;
+        botaoAgendar.style.display = 'none'; // Esconde o botão ao mudar o dia
+    });
+
+    // Adiciona o evento de clique para cada horário
+    document.querySelectorAll('.hora').forEach(hora => {
+        hora.addEventListener('click', function() {
+            // Remove a classe 'selecionada' de todos os horários
+            document.querySelectorAll('.hora').forEach(h => h.classList.remove('selecionada'));
+
+            // Adiciona a classe 'selecionada' ao horário clicado
+            this.classList.add('selecionada');
+
+            // Armazena o horário selecionado
+            horaSelecionada = this.textContent;
+
+            // Exibe o botão "Agendar"
+            botaoAgendar.style.display = 'block';
+        });
+    });
+
+    // Função para o clique no botão "Agendar"
+    botaoAgendar.addEventListener('click', function() {
+        if (horaSelecionada) {
+            alert(`Horário agendado para: ${horaSelecionada}`);
+        }
+    });
+    </script>
+
 </body>
 </html>

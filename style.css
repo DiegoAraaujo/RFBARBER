@@ -50,6 +50,7 @@ nav {
 }
 #bem-vindo h3 {
     text-align: center;
+    color: #f7ca18;
 }
 #opcoes-menu {
     position: fixed;
@@ -74,7 +75,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    box-shadow: 0 4px 10px rgba(58, 58, 58, 0.1);
     padding-top: 5px;
 }
 
@@ -92,17 +93,18 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color: #646464;
+    color: rgb(0, 0, 0);
+    background-color: white;
     width: 350px;
     height: 70px;
     transition: transform ease 0.3s;
 }
-.opcao:hover{
-    transform: scale(1.02);
+.opcao:hover {
+    transform: scale(1.05);
+    background-color: #f7ca18;
 }
 .opcao a{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 #opcoes-menu.active {
@@ -113,9 +115,13 @@ main{
     color: white;
     text-decoration: none;
     font-size: 24px;
+    transition: ease 0.3s transform;
+}
+#opcoes-menu a:hover {
+    color: #f7ca18;
+    transform: scale(1.05);
 }
 
-/* Estilo do ícone de menu hambúrguer */
 .menu-hamburger {
     z-index: 2;
     cursor: pointer;
@@ -139,7 +145,7 @@ main{
 }
 
 .menu-hamburger.active .bar {
-    background-color: white; /* Muda a cor para branco ao virar X */
+    background-color: white;
 }
 
 .menu-hamburger.active .bar:nth-child(1) {
@@ -148,7 +154,7 @@ main{
 }
 
 .menu-hamburger.active .bar:nth-child(2) {
-    opacity: 0; /* A barra do meio desaparece */
+    opacity: 0; 
 }
 
 .menu-hamburger.active .bar:nth-child(3) {
@@ -157,7 +163,8 @@ main{
 }
 
 .nos-conheca{
-    background-color: #646464;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    background-color: #000000;
     text-indent: 20px;
     max-width: 400px;
     width: 100%;
@@ -166,7 +173,10 @@ main{
     padding: 10px;
     align-items: center;
     text-align: justify;
-    color: rgb(0, 0, 0);
+    color:#f7ca18;
+}
+.nos-conheca img{
+    transition: ease 0.3s transform;
 }
 .foto-mural{
     border: 1px solid rgb(0, 0, 0);
@@ -177,4 +187,12 @@ main{
     flex-wrap: wrap;
     gap: 15px;
     padding: 20px;
+}
+
+#avatar {
+    border-radius: 0 0 0 130px;
+}
+
+.nos-conheca:hover img {
+    transform: scale(1.05);
 }
