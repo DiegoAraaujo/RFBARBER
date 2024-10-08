@@ -1,3 +1,5 @@
+let horarioSelecionado = ""; // Variável global para armazenar o horário selecionado
+
 function escolherHorario() {
     let data = document.getElementById("data-agendamento").value;
 
@@ -32,6 +34,7 @@ function selecionarHora(elemento) {
     if (elemento.style.background === 'rgb(247, 202, 24)') { 
         elemento.style.background = '';
         elemento.style.color = '';
+        horarioSelecionado = ""; // Limpa a seleção se o horário for desmarcado
     } else {
         const horarios = document.getElementsByClassName("hora");
         for (let i = 0; i < horarios.length; i++) {
@@ -41,6 +44,7 @@ function selecionarHora(elemento) {
 
         elemento.style.background = '#f7ca18';
         elemento.style.color = 'white';
+        horarioSelecionado = elemento.textContent; // Armazena o horário selecionado
     }
 }
 
@@ -64,3 +68,12 @@ flatpickr("#data-agendamento", {
         escolherHorario(); // Chama a função quando a data é alterada
     }
 });
+
+function confirmarHorario(){
+    let data = document.getElementById("data-agendamento").value;
+    if (horarioSelecionado) {
+        alert("Data: " + data + "\nHorário: " + horarioSelecionado);
+    } else {
+        alert("Por favor, selecione um horário."); // Aviso se nenhum horário foi selecionado
+    }
+}
