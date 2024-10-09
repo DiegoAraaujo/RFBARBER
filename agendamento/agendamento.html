@@ -30,9 +30,11 @@
     </div>
 
     <main>
-        <h3>Selecione um dia para agendar seu horário:</h3>
-        <input type="text" id="data-agendamento" placeholder="Selecione uma data">
-        
+        <h3>Selecione uma Data:</h3>
+        <input type="text" id="data-agendamento" placeholder="Selecione uma ">
+        <div>
+            <img src="../image/avatar-data.png" alt="">
+        </div>
         <script>
             flatpickr("#data-agendamento", {
                 locale: "pt",
@@ -40,10 +42,9 @@
                 allowInput: true
             });
         </script>
-
+        <h3>Selecione um horario</h3>
         <section id="marcar-hora">
             <div class="dia">
-                <h3>Segunda-feira</h3>
                 <div class="descricao">Turno da Manhã: FECHADO</div>
                 <div class="descricao">Turno da Tarde:</div>
                 <div class="horarios">
@@ -56,7 +57,6 @@
                 </div>
             </div>
             <div class="dia">
-                <h3>Terça-feira</h3>
                 <div class="descricao">Fechado pela manhã</div>
                 <div class="descricao">Horários da tarde:</div>
                 <div class="horarios">
@@ -69,9 +69,6 @@
                 </div>
             </div>
             <div class="dia">
-                <div style="text-align: center;">
-                    <h3>Escolha seu horario</h3>
-                </div>
                 <div class="descricao">Fechado pela manhã</div>
                 <div class="descricao">Horários da tarde:</div>
                 <div class="horarios">
@@ -85,9 +82,6 @@
             </div>
 
             <div class="dia">
-                <div style="text-align: center;">
-                    <h3>Escolha seu horario</h3>
-                </div>
                 <div class="descricao">Fechado pela manhã</div>
                 <div class="descricao">Horários da tarde:</div>
                 <div class="horarios">
@@ -101,9 +95,6 @@
             </div>
 
             <div class="dia">
-                <div style="text-align: center;">
-                    <h3>Escolha seu horario</h3>
-                </div>
                 <div class="descricao">Fechado pela manhã</div>
                 <div class="descricao">Horários da tarde:</div>
                 <div class="horarios">
@@ -116,9 +107,6 @@
             </div>
 
             <div class="dia">
-                <div style="text-align: center;">
-                    <h3>Escolha seu horario</h3>
-                </div>
                 <div class="descricao">Manhã: por ordem de chegada</div>
                 <div class="descricao">Horários da tarde:</div>
                 <div class="horarios">
@@ -130,9 +118,6 @@
             </div>
 
             <div class="dia">
-                <div style="text-align: center;">
-                    <h3>Escolha seu horario</h3>
-                </div>
                 <div class="descricao">Manhã: por ordem de chegada</div>
                 <div class="descricao">Tarde: fechado</div>
             </div>
