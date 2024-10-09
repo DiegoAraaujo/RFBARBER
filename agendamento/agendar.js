@@ -26,6 +26,7 @@ function escolherHorario() {
     let diaSelecionado = horarios_disponiveis[dia_semana];
     if (diaSelecionado) {
         diaSelecionado.style.display = "block";
+        document.getElementById("selhorar").style.display = 'block'
     }
 }
 

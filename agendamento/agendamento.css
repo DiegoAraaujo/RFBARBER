@@ -233,3 +233,7 @@ input{
 .descricao{
     color: black;
 }
+
+#selhorar{
+    display: none;
+}
