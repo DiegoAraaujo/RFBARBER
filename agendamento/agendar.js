@@ -65,6 +65,6 @@ function confirmarHorario() {
     if (horarioSelecionado) {
         alert("Data: " + data + "\nHorário: " + horarioSelecionado);
     } else {
-        alert("Por favor, selecione um horário."); 
+        alert("Por favor, preencha as informações."); 
     }
 }
