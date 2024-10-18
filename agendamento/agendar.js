@@ -1,11 +1,29 @@
 let horarioSelecionado = ""; 
+let servicoSelecionado = ""; 
+
+function selecionarServico(elemento) {
+    const servicos = document.getElementsByClassName("servico");
+    for (let i = 0; i < servicos.length; i++) {
+        servicos[i].style.backgroundColor = ""; 
+        servicos[i].style.color = ""; 
+    }
+
+    elemento.style.backgroundColor = "#f7ca18"; 
+    elemento.style.color = "white";
+    servicoSelecionado = elemento.textContent;
+}
 
 function escolherHorario() {
     let data = document.getElementById("data-agendamento").value;
 
-    if (!data) {
-        return;
-    }
+ let avisoDataDiv = document.getElementById("aviso-data");
+
+ if (!data) {
+     avisoDataDiv.style.display = "block"; 
+     return; 
+ } else {
+     avisoDataDiv.style.display = "none";
+ }
 
     horarioSelecionado = ""; 
 
@@ -25,9 +43,6 @@ function escolherHorario() {
     let diaSelecionado = horarios_disponiveis[dia_semana];
     if (diaSelecionado) {
         diaSelecionado.style.display = "block";
-        document.getElementById("selhorar").style.display = 'block';
-    } else {
-        document.getElementById("selhorar").style.display = 'none'; 
     }
 }
 
@@ -62,9 +77,10 @@ flatpickr("#data-agendamento", {
 
 function confirmarHorario() {
     let data = document.getElementById("data-agendamento").value;
-    if (horarioSelecionado) {
-        alert("Data: " + data + "\nHorário: " + horarioSelecionado);
+    if (horarioSelecionado && servicoSelecionado) {
+        alert("Data: " + data + "\nHorário: " + horarioSelecionado + "\nServiço: " + servicoSelecionado);
     } else {
         alert("Por favor, preencha as informações."); 
     }
 }
+

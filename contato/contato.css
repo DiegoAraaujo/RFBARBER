@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media (max-width: 640px) {
+    #avatar{
+        display: none;
+    }
+}
+  
+body{
+    background-color: #100f0f;
+}
+main{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contato{
+    justify-content: center;
+    border-radius: 20px;
+    gap: 20px;
+    align-items: center;
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.contato:hover{
+    transform: scale(1.1);
+}
+
+header {
+    background-color: black;
+    display: flex;
+    margin: 0 auto 0 auto;
+    position: relative;
+    padding: 10px;
+}
+
+#logorf {
+    display: block;
+    margin: auto;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: top;
+    padding: 15px;
+}
+
+
+#opcoes-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.5s ease; /* Transição suave */
+}
+
+#opcoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+#opcoes-menu.active {
+    left: 0; /* Quando o hambúrguer for clicado, o menu aparece */
+}
+
+#opcoes-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: ease 0.3s transform;
+}
+#opcoes-menu a:hover {
+    color: #f7ca18;
+    transform: scale(1.05);
+}
+
+.menu-hamburger {
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    transition: all 0.3s ease;
+}
+
+.menu-hamburger .bar {
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-hamburger.active .bar {
+    background-color: white;
+}
+
+.menu-hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: 5% 50%;
+}
+
+.menu-hamburger.active .bar:nth-child(2) {
+    opacity: 0; 
+}
+
+.menu-hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 5% 50%;
+}
+
+.nos-conheca{
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    background-color: #000000;
+    text-indent: 20px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    align-self: start;
+    padding: 10px;
+    align-items: center;
+    text-align: justify;
+    color:#f7ca18;
+}
+.contato a{
+    color: blue;
+    text-decoration: none;
+}
+
+.contato img{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contato img:hover{
+    transform: scale(1.1);
+}
+
+.contato a:hover{
+    color: blue;
+    text-decoration: none;
+}

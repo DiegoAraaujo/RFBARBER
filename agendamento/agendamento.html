@@ -30,8 +30,10 @@
     </div>
 
     <main>
-        <h3>Selecione uma Data:</h3>
-        <input type="text" id="data-agendamento" placeholder="Selecione uma Data">
+        <section id="sele-dat">
+            <h3>Selecione uma Data:</h3>
+            <input type="text" id="data-agendamento" placeholder="Selecione uma Data">
+        </section>
         <script>
             flatpickr("#data-agendamento", {
                 locale: "pt",
@@ -39,7 +41,11 @@
                 allowInput: true
             });
         </script>
-        <h3 id="selhorar">Selecione um horario:</h3>
+
+        <h3>Selecione um horario:</h3>
+        <div id="aviso-data">
+            SELECIONE UMA DATA ANTES POR FAVOR
+        </div>
         <section id="marcar-hora">
             <div class="dia">
                 <div class="descricao">Turno da Manhã: FECHADO</div>
@@ -119,6 +125,23 @@
                 <div class="descricao">Tarde: fechado</div>
             </div>
         </section>
+
+        <h3>Selecione um ou mais serviços:</h3>
+        <section id="servicos">
+            <div class="servico" onclick="selecionarServico(this)">
+                Corte de cabelo <br> completo
+            </div>
+            <div class="servico" onclick="selecionarServico(this)">
+                Barba
+            </div>
+            <div class="servico" onclick="selecionarServico(this)">
+                Sobrancelha
+            </div>
+            <div class="servico" onclick="selecionarServico(this)">
+                Somente pezinho
+            </div>
+        </section>
+        
         <button id="botao-agendar" onclick="confirmarHorario()">
             CONFIRMAR
         </button>

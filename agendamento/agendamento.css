@@ -19,6 +19,7 @@ main{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
+    height: 450px;
 }
 
 body{
@@ -86,14 +87,13 @@ nav {
     justify-content: space-between;
 }
 
-input[type="date"] {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+input{
+    border: 1px solid black;
     font-size: 16px;
+    box-shadow: 0 4px 6px rgb(56, 56, 56);
+    text-align: center; 
 }
+
 button {
     padding: 10px;
     background-color: #13ac18;
@@ -204,14 +204,6 @@ transform-origin: 5% 50%;
     text-decoration: none;
 }
 
-input{
-    max-width: 250px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgb(56, 56, 56);
-    text-align: center;
-    border: 1px solid black;
-}
-
 #button-selecionardia{
     cursor: pointer;
     position: absolute;
@@ -235,6 +227,51 @@ input{
     color: black;
 }
 
-#selhorar{
-    display: none;
+
+.servico{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 180px;
+    width: 100%;
+    color: white;
+    background-color: #100f0f;
+    border-radius: 15px;
+    padding: 3px;
+    text-align: center;
+    box-shadow: 0 8px 10px rgba(65, 74, 131, 0.1);
+    transition: transform ease 0.3s;
+    cursor: pointer;
+}
+
+.servico:hover{
+    transform: scale(1.05);
+    color: #f7ca18;
+}
+
+#servicos{
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+#aviso-data{
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 20px;
+    color: rgb(70, 70, 70);
+    gap: 10px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: rgb(231, 231, 231);
+}
+#sele-dat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
 }
