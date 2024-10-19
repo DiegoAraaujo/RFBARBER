@@ -230,9 +230,11 @@ transform-origin: 5% 50%;
 .servico{
     height: 40px;
     display: flex;
+    flex: 1 1 160px;
     justify-content: center;
     align-items: center;
     max-width: 180px;
+    min-width: 100px;
     width: 100%;
     color: white;
     background-color: #100f0f;
