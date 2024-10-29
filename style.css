@@ -86,26 +86,29 @@ main{
     align-items: center;
     height: 300px;
 }
+
+#opcoes a {
+    text-decoration: none;
+}
+
 .opcao{
     border-radius: 25px;   
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0);
+    color: #000000;
     background-color: white;
     width: 350px;
     height: 65px;
     transition: transform ease 0.3s;
+    text-decoration: none;
 }
 .opcao:hover {
     transform: scale(1.05);
     background-color: #f7ca18;
 }
-.opcao a{
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
+
 #opcoes-menu.active {
     left: 0; /* Quando o hambúrguer for clicado, o menu aparece */
 }
@@ -131,11 +134,7 @@ main{
     height: 21px;
     transition: all 0.3s ease;
 }
-#mapa{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+
 .menu-hamburger .bar {
     height: 4px;
     background-color: rgb(255, 255, 255);

@@ -1,29 +1,38 @@
 let horarioSelecionado = ""; 
-let servicoSelecionado = ""; 
+let servicosSelecionados = []; // Usar um array para armazenar serviços selecionados
 
 function selecionarServico(elemento) {
-    const servicos = document.getElementsByClassName("servico");
-    for (let i = 0; i < servicos.length; i++) {
-        servicos[i].style.backgroundColor = ""; 
-        servicos[i].style.color = ""; 
+    const servicoNome = elemento.textContent;
+
+    // Verifica se o serviço já está na lista de selecionados
+    const index = servicosSelecionados.indexOf(servicoNome);
+    if (index > -1) {
+        // Se já estiver selecionado, remove da lista
+        servicosSelecionados.splice(index, 1);
+        elemento.style.backgroundColor = ""; 
+        elemento.style.color = ""; 
+    } else {
+        // Se não estiver selecionado, adiciona à lista
+        servicosSelecionados.push(servicoNome);
+        elemento.style.backgroundColor = "#f7ca18"; 
+        elemento.style.color = "white";
     }
 
-    elemento.style.backgroundColor = "#f7ca18"; 
-    elemento.style.color = "white";
-    servicoSelecionado = elemento.textContent;
+    // Exibir serviços selecionados no console (ou em outro lugar)
+    console.log("Serviços selecionados:", servicosSelecionados);
 }
 
 function escolherHorario() {
     let data = document.getElementById("data-agendamento").value;
 
- let avisoDataDiv = document.getElementById("aviso-data");
+    let avisoDataDiv = document.getElementById("aviso-data");
 
- if (!data) {
-     avisoDataDiv.style.display = "block"; 
-     return; 
- } else {
-     avisoDataDiv.style.display = "none";
- }
+    if (!data) {
+        avisoDataDiv.style.display = "block"; 
+        return; 
+    } else {
+        avisoDataDiv.style.display = "none";
+    }
 
     horarioSelecionado = ""; 
 
@@ -64,8 +73,6 @@ function selecionarHora(elemento) {
     }
 }
 
-
-
 flatpickr("#data-agendamento", {
     locale: "pt",
     dateFormat: "d/m/Y",
@@ -77,10 +84,9 @@ flatpickr("#data-agendamento", {
 
 function confirmarHorario() {
     let data = document.getElementById("data-agendamento").value;
-    if (horarioSelecionado && servicoSelecionado) {
-        alert("Data: " + data + "\nHorário: " + horarioSelecionado + "\nServiço: " + servicoSelecionado);
+    if (horarioSelecionado && servicosSelecionados.length > 0) {
+        alert("Data: " + data + "\nHorário: " + horarioSelecionado + "\nServiços: " + servicosSelecionados.join(", "));
     } else {
         alert("Por favor, preencha as informações."); 
     }
 }
-

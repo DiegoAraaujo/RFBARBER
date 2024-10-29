@@ -31,7 +31,9 @@
 
     <main>
         <section id="sele-dat">
-            <h3>Selecione uma Data:</h3>
+            <label for="data-agendamento">
+                <h3>Selecione uma Data:</h3>
+            </label>
             <input type="text" id="data-agendamento" placeholder="Selecione uma Data">
         </section>
         <script>
@@ -128,18 +130,19 @@
 
         <h3>Selecione um ou mais serviços:</h3>
         <section id="servicos">
-            <div class="servico" onclick="selecionarServico(this)">
+            <div class="servico" onclick="selecionarServico(this)" data-servico="Cabelo">
                 Cabelo
             </div>
-            <div class="servico" onclick="selecionarServico(this)">
+            <div class="servico" onclick="selecionarServico(this)" data-servico="Barba">
                 Barba
             </div>
-            <div class="servico" onclick="selecionarServico(this)">
+            <div class="servico" onclick="selecionarServico(this)" data-servico="Sobrancelha">
                 Sobrancelha 
             </div>
         </section>
+        
         <section id="preco">
-            <a href="">
+            <a href="../servicos/servico.html">
                 VERIFIQUE O PREÇO DE CADA SERVIÇO
             </a>
         </section>
@@ -147,6 +150,8 @@
         <button id="botao-agendar" onclick="confirmarHorario()">
             CONFIRMAR
         </button>
+
+        <img src="../image/avatar-agendar.png" alt="" id="avatar-agend">
     </main>
 
     <section id="regras">
