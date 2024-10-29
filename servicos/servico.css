@@ -1,13 +1,18 @@
-@charset "utf-8";
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-  
-body{
+@media (max-width: 800px) {
+    #avatar {
+        display: none;
+    }
+    main {
+        justify-content: center;
+    }
+}
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #100f0f;
 }
@@ -15,7 +20,7 @@ body{
 header {
     background-color: black;
     display: flex;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     position: relative;
     padding: 10px;
 }
@@ -61,6 +66,7 @@ nav {
     font-size: 24px;
     transition: ease 0.3s transform;
 }
+
 #opcoes-menu a:hover {
     color: #f7ca18;
     transform: scale(1.05);
@@ -102,18 +108,22 @@ nav {
     transform-origin: 5% 50%;
 }
 
-main{
-    position: relative;
-    margin: 0 auto 0 auto;
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
     max-width: 700px;
 }
+
 table {
-    margin: 20px auto 0 auto;
     color: black;
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
-    border-collapse: collapse; 
-    max-width:600px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px; 
 }
 
 th, td {
@@ -122,13 +132,12 @@ th, td {
     text-align: left; 
 }
 
-#avatar{
-    top: 13px;
-    right: -145px;
-    position: absolute;
-}
-
-caption{
+caption h3 {
     color: #f7ca18;
     margin-bottom: 5px;
+}
+
+#avatar {
+    position: relative;
+    top:44px;
 }
